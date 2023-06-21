@@ -9,13 +9,32 @@ var winsEl = document.querySelector('.win')
 var lossesEl = document.querySelector('.lose')
 
   // list of words
-  // userGuesses = [] list of letters guessed by user
-  // answer = "function"
+var words = ["jellyfish", "pancakes", "callback", "bacon", "porcupine"]
+var userGuesses = [] // list of letters guessed by user
+var answer = // "function"
 
+  function getRandomWord(){
+     var randomIdx = Math.floor( Math.random() * words.length)
+     answer = words[randomIdx]
+  }
+
+  function renderWord(answer){
+    var blanks = ""
+    for (var i = 0; i < randomWord.length; i++){
+      blanks += "_"
+    }
+    wordBlanksEl.innerText = blanks.split('').join(' ')
+  }
+  
+  
   function startRound() {
     // start timer
-    // pick a random word
-    // set word-blanks to have _'s
+   getRandomWord()
+   renderWord()
+   
+
+  
+
   }
 
   function onKeydown(event) {
@@ -40,6 +59,7 @@ var lossesEl = document.querySelector('.lose')
   }
 
   // Event Listeners
-    // start - startRound()
-    // reset
-    // keydown - onKeydown
+  // start - startRound()
+  startButton.addEventListner('click', startRound)
+  // reset
+  // keydown - onKeydown
